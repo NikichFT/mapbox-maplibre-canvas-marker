@@ -14,4 +14,4 @@ It includes examples of creating clusters as charts using popular libraries such
 
 Библиотека также включает примеры создания кластеров в виде диаграмм с использованием популярных библиотек, таких как ECharts, D3 и т. д.
 
-![img.png](img.png)
+![img_1.png](img_1.png)

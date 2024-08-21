@@ -1,0 +1,26 @@
+{
+  "name": "maplibre-canvas-marker",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@turf/turf": "^7.0.0",
+    "echarts": "^5.5.0",
+    "maplibre-gl": "^4.4.1",
+    "supercluster": "^8.0.1",
+    "vue": "^3.4.30"
+  },
+  "devDependencies": {
+    "@types/geojson": "^7946.0.14",
+    "@types/supercluster": "^7.1.3",
+    "@vitejs/plugin-vue": "^5.0.5",
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1",
+    "vue-tsc": "^2.0.22"
+  }
+}

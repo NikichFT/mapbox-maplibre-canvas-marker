@@ -1,21 +1,20 @@
 import {EChartsOption} from "echarts";
 import {Feature, Point} from "geojson";
+import data from '../../addFeatures/data/charging.json'
 
 export const pieChartShell = (features: Feature<Point>[]): EChartsOption => {
-    const brandSet = new Set(
-      features.map(feature => feature.properties?.name)
-    )
-    const brandsWithCount: { name: string; value: number }[] = []
-    brandSet.forEach((brandName: string) => {
-        const count = features.filter(
-          feature => feature.properties?.name === brandName
-        ).length
-        brandsWithCount.push({
-            name: brandName,
-            value: count,
-        })
-    })
+    const testFeatureCollection = data as any
 
+    const fieldsWithCount: {name: string, value: number}[] = [
+        {
+            name: 'all',
+            value: testFeatureCollection.features.length
+        },
+        {
+            name: 'clustered',
+            value: features.length
+        },
+    ]
     return {
         tooltip: {
             trigger: 'item'
@@ -52,10 +51,10 @@ export const pieChartShell = (features: Feature<Point>[]): EChartsOption => {
                 labelLine: {
                     show: false
                 },
-                data: brandsWithCount.map((fieldData) => {
+                data: fieldsWithCount.map((fieldData) => {
                     return {
                         value: fieldData.value,
-                        name: fieldData.name || 'other',
+                        name: fieldData.value || 'other',
                     }
                 }).sort(function (a, b) {
                     return a.value - b.value;
